@@ -18,10 +18,15 @@ from django.urls import path
 from django.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib import admin
+from django.urls import path
+from django.urls import include
+from api.urls import api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('prometheus/', include('django_prometheus.urls')),
+    path('api/', api.urls),
 ]
 
 if settings.DEBUG:
